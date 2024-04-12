@@ -1,4 +1,4 @@
-#TELEGRAM BOT designed by HARTS
+##TELEGRAM BOT designed by HARTS \n
 #Introduction
 
 - This telegram bot is designed to tell the class number and time table of IUGET students
