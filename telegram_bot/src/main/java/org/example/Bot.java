@@ -31,13 +31,16 @@ public class Bot extends TelegramLongPollingBot {
 
             switch (userInput) {
                 case "/start":
+                case "/recommence":
                     String message = "Hello " + firstName +" "+ lastName + " \n\n"+
                             "Welcome to IUGET's Official Telegram Bot\n\n" +
-                            "/timetable - for your time table\n" +
-                            "/classnumber - for your class number\n" +
-                            "/plaque - Plaquette IUGET\n" +
+                            "/timetablesadi - Time Table Bonamoussadi\n" +
+                            "/timetableberi - Time Table Bonaberi\n" +
+                            "/classnumbersadi - Class Numbers Bonamoussadi\n" +
+                            "/classnumberberi - Class Numbers Bonaberi\n" +
+                            "/plaquette - IUGET Pamphlet\n" +
                             "/awsregister - AWS registration form\n" +
-                            "/catalogue - Catalogue IUGET 2024 - 2025\n" +
+                            "/catalogue - IUGET Catalogue 2024 - 2025\n" +
                             "/help - If you have difficulties";
 
                     SendMessage responseStart = new SendMessage();
@@ -56,11 +59,13 @@ public class Bot extends TelegramLongPollingBot {
                     message = "I can help you get your time table and class number. If you're new here, " +
                             "welcome onboard. We are more than happy to /help\n\n" +
                             "Time Table\n" +
-                            "/timetable\n\n" +
+                            "/timetablesadi\n" +
+                            "/timetableberi\n\n" +
                             "Class Number\n" +
-                            "/classnumber\n\n" +
+                            "/classnumbersadi\n" +
+                            "/classnumberberi\n\n" +
                             "Others\n" +
-                            "/plaque\n" +
+                            "/plaquette\n" +
                             "/awsregister\n" +
                             "/catalogue\n\n" +
                             "Please contact Admin @harts01\n";
@@ -76,60 +81,118 @@ public class Bot extends TelegramLongPollingBot {
                     }
                     break;
 
-                case "/timetable":
-                    message = "TIME TABLE OPTION \n\n" +
+                case "/timetablesadi":
+                    message = "TIME TABLE BONAMOUSSADI CAMPUS \n\n" +
                             "Now choose department by selecting the letter corresponding to your department\n\n" +
                             "ANGLO-SAXON PROGRAMS\n\n" +
                             "Industrial\n" +
-                            "/a - HND INDUSTRIAL I\n" +
-                            "/b - HND INDUSTRIAL II\n" +
-                            "/c - BACHELOR OF TECHNOLOGY (B-TECH)\n" +
-                            "/d - MASTERS OF ENGINEERING\n\n" +
+                            "/ttsadihndindi - HND INDUSTRIAL I\n" +
+                            "/ttsadihndindii - HND INDUSTRIAL II\n" +
+                            "/ttsadibtech - BACHELOR OF TECHNOLOGY (B-TECH)\n" +
+                            "/ttsadimoe - MASTERS OF ENGINEERING\n\n" +
                             "Commercial\n" +
-                            "/e - HND COMMERCIAL I\n" +
-                            "/f - HND COMMERCIAL II\n" +
-                            "/g - PROFESSIONAL BATCHELOR\n" +
-                            "/h - MBA UNIVERSITY OF BAMENDA\n\n" +
+                            "/ttsadihndcomi - HND COMMERCIAL I\n" +
+                            "/ttsadihndcomii - HND COMMERCIAL II\n" +
+                            "/ttsadiprofbatch - PROFESSIONAL BATCHELOR\n" +
+                            "/ttsadimbauob - MBA UNIVERSITY OF BAMENDA\n\n" +
                             "Health\n" +
-                            "/i - HND HEALTH I\n" +
-                            "/j - HND HEALTH II\n" +
-                            "/k - HND HEALTH III\n" +
-                            "/l - BACHELOR OF HEALTH\n" +
-                            "/m - SPECIAL BATCHELOR OF HEALTH\n" +
-                            "/n - MASTERS OF HEALTH\n\n" +
-                            "/o - GIMPA GHANA\n" +
-                            "/p - MBA\n" +
-                            "/q - BUSINESS ADMINISTRATION\n" +
-                            "/r - ST CLEMENT UNIVERSITY OF FRANCE\n" +
-                            "/s - EXECUTIVE MBA\n" +
-                            "/t - DOCTORATE OF BUSINESS MANAGEMENT\n\n\n" +
+                            "/ttsadihndhlthi - HND HEALTH I\n" +
+                            "/ttsadihndhlthii - HND HEALTH II\n" +
+                            "/ttsadihndhlthiii - HND HEALTH III\n" +
+                            "/ttsadibatchofhlth - BACHELOR OF HEALTH\n" +
+                            "/ttsadibatchofhlthspecail - SPECIAL BATCHELOR OF HEALTH\n" +
+                            "/ttsadimasofhlth - MASTERS OF HEALTH\n\n" +
+                            "/ttsadigimpaghana - GIMPA GHANA\n" +
+                            "/ttsadimba - MBA\n" +
+                            "/ttsadibusadmin - BUSINESS ADMINISTRATION\n" +
+                            "/ttsadistcleuof - ST CLEMENT UNIVERSITY OF FRANCE\n" +
+                            "/ttsadiexemba - EXECUTIVE MBA\n" +
+                            "/ttsadidocobm - DOCTORATE OF BUSINESS MANAGEMENT\n\n\n" +
                             "LES PROGRAMMES DE FORMATION EN FRANCIAS\n\n" +
                             "Gestion\n" +
-                            "/i - BTS GESTION I\n" +
-                            "/ii - BTS GESTION II\n" +
-                            "/iii - LICENCE PROFESSIONNELL\n" +
-                            "/iv - MASTER PROFESSIONNELL\n\n" +
-                            "Industriel\n\n" +
-                            "/v - BTS INDUSTRIEL I\n" +
-                            "/vi - BTS INDUSTRIEL II\n" +
-                            "/vii - LICENCE PROFESSIONNELL\n" +
-                            "/viii - LICENCE DE TECHNOLOGIE\n" +
-                            "/ix - MASTER PROFESSIONNELLE\n\n" +
-                            "Sante\n\n" +
-                            "/x - BTS SANTE I\n" +
-                            "/xi - BTS SANTE II\n" +
-                            "/xii - BTS SANTE III\n" +
-                            "/xiii - LICENCE PRO\n" +
-                            "/xiv - LICENCE SPECIAL\n" +
-                            "/xv - MASTER PRO\n\n" +
-                            "/xvi - CYCLE ENGINIEUR\n" +
+                            "/ttsadibtsges - BTS GESTION I\n" +
+                            "/ttsadigeslicencepro - LICENCE PROFESSIONNELL\n" +
+                            "/ttsadigesmasterpro - MASTER PROFESSIONNELL\n\n" +
+                            "Industriel\n" +
+                            "/ttsadibtsind - BTS INDUSTRIEL I\n" +
+                            "/ttsadibtsind - BTS INDUSTRIEL II\n" +
+                            "/ttsadiindlicencepro - LICENCE PROFESSIONNELL\n" +
+                            "/ttsadiindlicencetech - LICENCE DE TECHNOLOGIE\n" +
+                            "/ttsadiindmaspro - MASTER PROFESSIONNELLE\n\n" +
+                            "Sante\n" +
+                            "/ttsadibtssantei - BTS SANTE I\n" +
+                            "/ttsadibtssanteii - BTS SANTE II\n" +
+                            "/ttsadibtssanteiii - BTS SANTE III\n" +
+                            "/ttsadisantelipro - LICENCE PROFESIONELLE\n" +
+                            "/ttsadisantelispecial - LICENCE SPECIAL\n" +
+                            "/ttsadisantemaspro - MASTER PROFESSIONNELLE\n\n" +
+                            "/ttsadisantecyceng - CYCLE ENGINIEUR\n" +
                             "";
 
-                    SendMessage responseTimetable = new SendMessage();
-                    responseTimetable.setChatId(chat_id);
-                    responseTimetable.setText(message);
+                    SendMessage responseTimetablesadi= new SendMessage();
+                    responseTimetablesadi.setChatId(chat_id);
+                    responseTimetablesadi.setText(message);
                     try{
-                        execute(responseTimetable);
+                        execute(responseTimetablesadi);
+                    }catch(TelegramApiException e){
+                        e.printStackTrace();
+                    }
+
+                    break;
+
+                case "/timetableberi":
+                    message = "TIME TABLE BONABERI CAMPUS \n\n" +
+                            "Now choose department by selecting the letter corresponding to your department\n\n" +
+                            "ANGLO-SAXON PROGRAMS\n\n" +
+                            "Industrial\n" +
+                            "/ttberihndindi - HND INDUSTRIAL I\n" +
+                            "/ttberihndindii - HND INDUSTRIAL II\n" +
+                            "/ttberibtech - BACHELOR OF TECHNOLOGY (B-TECH)\n" +
+                            "/ttberimoe - MASTERS OF ENGINEERING\n\n" +
+                            "Commercial\n" +
+                            "/ttberihndcomi - HND COMMERCIAL I\n" +
+                            "/ttberihndcomii - HND COMMERCIAL II\n" +
+                            "/ttberiprofbatch - PROFESSIONAL BATCHELOR\n" +
+                            "/ttberimbauob - MBA UNIVERSITY OF BAMENDA\n\n" +
+                            "Health\n" +
+                            "/ttberihndhlthi - HND HEALTH I\n" +
+                            "/ttberihndhlthii - HND HEALTH II\n" +
+                            "/ttberihndhlthiii - HND HEALTH III\n" +
+                            "/ttberibatchofhlth - BACHELOR OF HEALTH\n" +
+                            "/ttberibatchofhlthspecail - SPECIAL BATCHELOR OF HEALTH\n" +
+                            "/ttberimasofhlth - MASTERS OF HEALTH\n\n" +
+                            "/ttberigimpaghana - GIMPA GHANA\n" +
+                            "/ttberimba - MBA\n" +
+                            "/ttberibusadmin - BUSINESS ADMINISTRATION\n" +
+                            "/ttberistcleuof - ST CLEMENT UNIVERSITY OF FRANCE\n" +
+                            "/ttberiexemba - EXECUTIVE MBA\n" +
+                            "/ttberidocobm - DOCTORATE OF BUSINESS MANAGEMENT\n\n\n" +
+                            "LES PROGRAMMES DE FORMATION EN FRANCIAS\n\n" +
+                            "Gestion\n" +
+                            "/ttberibtsges - BTS GESTION I\n" +
+                            "/ttberigeslicencepro - LICENCE PROFESSIONNELL\n" +
+                            "/ttberigesmasterpro - MASTER PROFESSIONNELL\n\n" +
+                            "Industriel\n" +
+                            "/ttberibtsind - BTS INDUSTRIEL I\n" +
+                            "/ttberibtsind - BTS INDUSTRIEL II\n" +
+                            "/ttberiindlicencepro - LICENCE PROFESSIONNELL\n" +
+                            "/ttberiindlicencetech - LICENCE DE TECHNOLOGIE\n" +
+                            "/ttberiindmaspro - MASTER PROFESSIONNELLE\n\n" +
+                            "Sante\n" +
+                            "/ttberibtssantei - BTS SANTE I\n" +
+                            "/ttberibtssanteii - BTS SANTE II\n" +
+                            "/ttberibtssanteiii - BTS SANTE III\n" +
+                            "/ttberisantelipro - LICENCE PROFESIONELLE\n" +
+                            "/ttberisantelispecial - LICENCE SPECIAL\n" +
+                            "/ttberisantemaspro - MASTER PROFESSIONNELLE\n\n" +
+                            "/ttberisantecyceng - CYCLE ENGINIEUR\n" +
+                            "";
+
+                    SendMessage responseTimetableBonaberi = new SendMessage();
+                    responseTimetableBonaberi.setChatId(chat_id);
+                    responseTimetableBonaberi.setText(message);
+                    try{
+                        execute(responseTimetableBonaberi);
                     }catch(TelegramApiException e){
                         e.printStackTrace();
                     }
@@ -137,7 +200,7 @@ public class Bot extends TelegramLongPollingBot {
                     break;
 
 
-                case "/classnumber":
+                case "":
                     message = " Class Number Option\n\n" +
                             "Now choose department by selecting the letter corresponding to your department\n\n" +
                             "i. Industrial Level 100\n" +
@@ -159,8 +222,8 @@ public class Bot extends TelegramLongPollingBot {
 
                     break;
 
-                case "/plaque":
-                    message = "D:\\Java Projects\\telegram_bot\\pdf\\plaquette.pdf";
+                case "/plaquette":
+                    message = "D:\\telegram_bot\\telegram_bot\\pdf\\plaquette.pdf";
                     File pdfFile0 = new File(message);
 
                     SendDocument sendDocumentRequest0 = new SendDocument();
@@ -178,7 +241,7 @@ public class Bot extends TelegramLongPollingBot {
 
                 case "/awsregister":
 
-                    message = "D:\\Java Projects\\telegram_bot\\pdf\\aws-inscription.pdf";
+                    message = "D:\\telegram_bot\\telegram_bot\\pdf\\aws-inscription.pdf";
                     File pdfFile = new File(message);
 
                     SendDocument sendDocumentRequest1 = new SendDocument();
@@ -195,7 +258,7 @@ public class Bot extends TelegramLongPollingBot {
                     break;
 
                 case "/catalogue":
-                    message = "D:\\Java Projects\\telegram_bot\\pdf\\Catalogue-iuget-2024-2025.pdf";
+                    message = "D:\\telegram_bot\\telegram_bot\\pdf\\Catalogue-iuget-2024-2025.pdf";
                     File pdfFile2 = new File(message);
 
                     SendDocument sendDocumentRequest2 = new SendDocument();
@@ -211,38 +274,18 @@ public class Bot extends TelegramLongPollingBot {
 
                     break;
 
-                case "c":
-                case "C":
-                    String txtFilePath = "D:\\Java Projects\\telegram_bot\\photo\\b-tech_04-07-24.jpeg";
+                case "/ttsadibtech":
+                    String txtFilePath = "D:\\telegram_bot\\telegram_bot\\photo\\ttsadibtech-22_28.jpeg";
                     File jpegFile = new File(txtFilePath);
 
 //                SendDocument sendDocumentRequest = new SendDocument();
 //                sendDocumentRequest.setChatId(chat_id);
 //                sendDocumentRequest.setDocument(new InputFile(pdfFile));
 //                sendDocumentRequest.setCaption("FIRST SEMESTER TIME TABLE FOR B-TECH");
-                    SendPhoto sendDocumentRequest = new SendPhoto();
-                    sendDocumentRequest.setChatId(chat_id);
-                    sendDocumentRequest.setPhoto(new InputFile(jpegFile));
-                    sendDocumentRequest.setCaption("FIRST SEMESTER TIME TABLE FOR BACHELOR OF TECHNOLOGY");
-
-                    try {
-                        execute(sendDocumentRequest);
-                    } catch (TelegramApiException e) {
-                        e.printStackTrace();
-                    }
-
-                    break;
-
-
-                case "e":
-                case "E":
-                    String photoFilePath = "D:\\Java Projects\\telegram_bot\\photo\\hndii-day_commercial.jpg";
-                    File photoFile = new File(photoFilePath);
-
                     SendPhoto sendPhotoRequest = new SendPhoto();
                     sendPhotoRequest.setChatId(chat_id);
-                    sendPhotoRequest.setPhoto(new InputFile(photoFile));
-                    sendPhotoRequest.setCaption("TIME TABLE FOR HND II (DAY) COMMERCIAL");
+                    sendPhotoRequest.setPhoto(new InputFile(jpegFile));
+                    sendPhotoRequest.setCaption("TIME TABLE FOR BACHELOR OF TECHNOLOGY");
 
                     try {
                         execute(sendPhotoRequest);
@@ -251,6 +294,25 @@ public class Bot extends TelegramLongPollingBot {
                     }
 
                     break;
+
+
+//                case "e":
+//                case "E":
+//                    String photoFilePath = "D:\\Java Projects\\telegram_bot\\photo\\hndii-day_commercial.jpg";
+//                    File photoFile = new File(photoFilePath);
+//
+//                    SendPhoto sendPhotoRequest = new SendPhoto();
+//                    sendPhotoRequest.setChatId(chat_id);
+//                    sendPhotoRequest.setPhoto(new InputFile(photoFile));
+//                    sendPhotoRequest.setCaption("TIME TABLE FOR HND II (DAY) COMMERCIAL");
+//
+//                    try {
+//                        execute(sendPhotoRequest);
+//                    } catch (TelegramApiException e) {
+//                        e.printStackTrace();
+//                    }
+//
+//                    break;
 
 
                 case "i":
@@ -276,8 +338,7 @@ public class Bot extends TelegramLongPollingBot {
                     break;
 
                 case "j": {
-                    message = "Industrial Level 200 for your class number, please select your specialty\n\n" +
-                            "" +
+                    message = "Please select your specialty\n\n" +
                             "SWE2 - Software Engineering Level 200\n" +
                             "NWS2 - Network and security Level 200\n" +
                             "ETC2 -  Electrotechnique Level 200\n" +
@@ -298,7 +359,7 @@ public class Bot extends TelegramLongPollingBot {
 
 
                 default:
-                    String s =  "Option not yet available /help";
+                    String s =  "Option not yet available. Get /help";
 
                     SendMessage response = new SendMessage();
                     response.setChatId(chat_id);
